@@ -52,11 +52,16 @@ page() {
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/">
-      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/>
-        <path d="M8 12h6l2.5 8L19 12h5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M23 19.5l2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M25 22H9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+      <svg width="31" height="26" viewBox="0 0 48 40" fill="none" aria-hidden="true">
+        <g fill="var(--brand)">
+          <circle cx="28" cy="17" r="13"/>
+          <circle cx="14" cy="23" r="10"/>
+          <rect x="14" y="20" width="27" height="13" rx="6.5"/>
+        </g>
+        <g fill="var(--brand)" stroke="var(--page)" stroke-width="2.8" stroke-linejoin="round" paint-order="stroke">
+          <path d="M15 19l5 6.5h-2.6V33h-4.8v-7.5H10z"/>
+          <path d="M29 37L24 30.5h2.6V23h4.8v7.5H34z"/>
+        </g>
       </svg>
       <span>Migrate<span class="brand-mwp">WP</span></span>
     </a>
@@ -88,11 +93,16 @@ ${body}
     <div class="footer-grid">
       <div>
         <a class="brand" href="/">
-          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/>
-            <path d="M8 12h6l2.5 8L19 12h5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M23 19.5l2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M25 22H9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <svg width="31" height="26" viewBox="0 0 48 40" fill="none" aria-hidden="true">
+            <g fill="var(--brand)">
+              <circle cx="28" cy="17" r="13"/>
+              <circle cx="14" cy="23" r="10"/>
+              <rect x="14" y="20" width="27" height="13" rx="6.5"/>
+            </g>
+            <g fill="var(--brand)" stroke="var(--page)" stroke-width="2.8" stroke-linejoin="round" paint-order="stroke">
+              <path d="M15 19l5 6.5h-2.6V33h-4.8v-7.5H10z"/>
+              <path d="M29 37L24 30.5h2.6V23h4.8v7.5H34z"/>
+            </g>
           </svg>
           <span>Migrate<span class="brand-mwp">WP</span></span>
         </a>

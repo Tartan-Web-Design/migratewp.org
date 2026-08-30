@@ -17,9 +17,11 @@
   --panel:      #f7f9fa;
   --panel-2:    #eef2f4;
 
-  --accent:      #1f7a5c;
-  --accent-deep: #145c44;
-  --accent-wash: #e8f4ef;
+  --brand:       #2684ff;   /* the logo blue — used for the mark */
+  --accent:      #1a6ee0;   /* fills: buttons, focus, borders */
+  --accent-deep: #0d4ea8;   /* link and heading text */
+  --accent-wash: #e9f2fe;
+  --on-accent:   #ffffff;   /* text on an --accent fill */
   --warm:        #b4632c;
 
   --term-bg:    #0d1117;
@@ -54,9 +56,11 @@
     --page:      #0f141a;
     --panel:     #161d25;
     --panel-2:   #1d262f;
-    --accent:      #4ecb9a;
-    --accent-deep: #7fdcb6;
-    --accent-wash: #14302a;
+    --brand:       #4e9bff;
+    --accent:      #6fb4ff;
+    --accent-deep: #8cc2ff;
+    --accent-wash: #102740;
+    --on-accent:   #08213a;
     --warm:        #e0925c;
     --term-bg:   #080c11;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
@@ -74,9 +78,11 @@
   --page:      #0f141a;
   --panel:     #161d25;
   --panel-2:   #1d262f;
-  --accent:      #4ecb9a;
-  --accent-deep: #7fdcb6;
-  --accent-wash: #14302a;
+  --brand:       #4e9bff;
+  --accent:      #6fb4ff;
+  --accent-deep: #8cc2ff;
+  --accent-wash: #102740;
+  --on-accent:   #08213a;
   --warm:        #e0925c;
   --term-bg:   #080c11;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
@@ -163,7 +169,7 @@ kbd {
   left: -9999px;
   top: 0;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   padding: .6rem 1rem;
   z-index: 100;
   border-radius: 0 0 var(--radius) 0;
@@ -207,7 +213,7 @@ kbd {
 }
 .brand:hover { color: var(--ink); }
 .brand svg { flex: none; }
-.brand .brand-mwp { color: var(--accent); }
+.brand .brand-mwp { color: var(--ink); }
 
 .nav {
   display: flex;
@@ -230,11 +236,11 @@ kbd {
 .nav .nav-cta {
   margin-left: .35rem;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-weight: 600;
   padding: .45rem .85rem;
 }
-.nav .nav-cta:hover { background: var(--accent-deep); color: #fff; }
+.nav .nav-cta:hover { background: var(--accent-deep); color: var(--on-accent); }
 
 .icon-btn {
   display: inline-grid;
@@ -356,8 +362,8 @@ kbd {
 .btn:active { transform: translateY(1px); }
 .btn svg { width: 16px; height: 16px; flex: none; }
 
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-deep); color: #fff; }
+.btn-primary { background: var(--accent); color: var(--on-accent); }
+.btn-primary:hover { background: var(--accent-deep); color: var(--on-accent); }
 
 .btn-ghost {
   background: var(--page);
