@@ -818,8 +818,13 @@ page "releases/index.html" \
         <span class="tag">Latest</span>
         <time datetime="2021-09-10">10 September 2021</time>
       </div>
-      <!-- TODO: paste the 1.1 release notes from the old WordPress site here. -->
-      <p>The current release. Adds the standalone <code>rollback</code> command, lets you attach a comment to a migration or rollback, and removes the need for root access on the remote server &mdash; any server you can SSH into will do.</p>
+      <p>The current release.</p>
+      <ul>
+        <li>Adds a <strong>changelog</strong> of migrations to and from each site. Its contents can be displayed using the new <code>report</code> command.</li>
+        <li><strong>Comments</strong> can now be added during migrations and rollbacks, and are saved to the site&rsquo;s changelog.</li>
+        <li>Rollback moves into a <strong>separate <code>rollback</code> command</strong> &mdash; user testing suggested this improved usability.</li>
+        <li><strong>Root access is no longer required.</strong> MigrateWP now works on any Plesk server you can SSH into.</li>
+      </ul>
       <p>
         <a class="btn btn-ghost" href="https://github.com/Tartan-Web-Design/migrateWP/releases/tag/v1.1" rel="noopener">Download 1.1</a>
       </p>
