@@ -17,7 +17,7 @@
   --panel:      #f7f9fa;
   --panel-2:    #eef2f4;
 
-  --brand:       #2684ff;   /* the logo blue — used for the mark */
+  --brand:       #1c7dfe;   /* the blue in the logo artwork */
   --accent:      #1a6ee0;   /* fills: buttons, focus, borders */
   --accent-deep: #0d4ea8;   /* link and heading text */
   --accent-wash: #e9f2fe;
@@ -203,17 +203,29 @@ kbd {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: .55rem;
-  font-weight: 700;
-  font-size: 1.06rem;
-  letter-spacing: -.02em;
-  color: var(--ink);
-  text-decoration: none;
   margin-right: auto;
+  text-decoration: none;
+  flex: none;
 }
-.brand:hover { color: var(--ink); }
-.brand svg { flex: none; }
-.brand .brand-mwp { color: var(--ink); }
+.brand img {
+  display: block;
+  height: 30px;
+  width: auto;
+}
+.site-footer .brand img { height: 28px; }
+
+/* One artwork per theme: the supplied logo, and the same logo with its
+   near-black wordmark relit so it holds on a dark ground. These selectors
+   must outrank `.brand img` above, hence the `.brand` prefix throughout. */
+.brand .logo-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand .logo-light { display: none; }
+  :root:not([data-theme="light"]) .brand .logo-dark  { display: block; }
+}
+:root[data-theme="dark"] .brand .logo-light { display: none; }
+:root[data-theme="dark"] .brand .logo-dark  { display: block; }
+:root[data-theme="light"] .brand .logo-light { display: block; }
+:root[data-theme="light"] .brand .logo-dark  { display: none; }
 
 .nav {
   display: flex;
@@ -758,7 +770,7 @@ a.card h3 { color: var(--accent-deep); }
 .footer-grid li { margin-bottom: .38rem; }
 .footer-grid a { color: var(--ink-soft); text-decoration: none; }
 .footer-grid a:hover { color: var(--accent-deep); text-decoration: underline; }
-.footer-blurb { color: var(--ink-soft); max-width: 32ch; margin: .7rem 0 0; }
+.footer-blurb { color: var(--ink-soft); max-width: 32ch; margin: .9rem 0 0; }
 
 .footer-base {
   display: flex;
