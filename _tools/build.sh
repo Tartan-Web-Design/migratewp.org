@@ -903,46 +903,217 @@ BODY
 # --------------------------------------------------------- privacy policy
 page "privacy-policy/index.html" \
   "Privacy policy — MigrateWP" \
-  "What data the MigrateWP website collects, and what it does not." \
+  "How Tartan Web Design Ltd collects, uses and retains personal data in connection with this website and our services." \
   "/privacy-policy/" "privacy" <<'BODY'
 <div class="page-head">
   <div class="wrap">
     <p class="breadcrumb"><a href="/">Home</a><span>/</span>Privacy policy</p>
     <h1>Privacy policy</h1>
-    <p>Last updated: 30 August 2026</p>
+    <p>How Tartan Web Design Ltd collects, uses and retains personal data.</p>
   </div>
 </div>
 
 <div class="wrap" style="padding:clamp(2rem,4vw,3rem) 0 4.5rem">
-  <article class="prose">
+  <article class="prose legal">
 
-    <div class="note warn">
-      <p><strong>Review before publishing.</strong> This policy describes the static version of the site as built. Check it against the policy on the previous WordPress site and against your own obligations before it goes live.</p>
-    </div>
+    <nav class="toc" aria-label="Sections">
+      <h2>Sections</h2>
+      <ol>
+        <li><span>1</span><a href="#s1">Introduction</a></li>
+        <li><span>2</span><a href="#s2">Credit</a></li>
+        <li><span>3</span><a href="#s3">The personal data that we collect</a></li>
+        <li><span>4</span><a href="#s4">Purposes of processing and legal bases</a></li>
+        <li><span>5</span><a href="#s5">Providing your personal data to others</a></li>
+        <li><span>6</span><a href="#s6">International transfers of your personal data</a></li>
+        <li><span>7</span><a href="#s7">Retaining and deleting personal data</a></li>
+        <li><span>8</span><a href="#s8">Your rights</a></li>
+        <li><span>9</span><a href="#s9">About cookies</a></li>
+        <li><span>10</span><a href="#s10">Cookies that we use</a></li>
+        <li><span>11</span><a href="#s11">Cookies used by our service providers</a></li>
+        <li><span>12</span><a href="#s12">Managing cookies</a></li>
+        <li><span>13</span><a href="#s13">Amendments</a></li>
+        <li><span>14</span><a href="#s14">Our details</a></li>
+        <li><span>15</span><a href="#s15">Data protection officer</a></li>
+      </ol>
+    </nav>
 
-    <h2>The short version</h2>
+    <h2 id="s1"><span class="num">1.</span>Introduction</h2>
 
-    <p>This website is a set of static files. It sets no cookies, runs no analytics, loads nothing from third party servers, and has no forms. It does not ask you for any personal data and has no way to collect it.</p>
+    <p class="clause"><span class="num">1.1</span><span>We are committed to safeguarding the privacy of our website visitors, service users, individual customers and customer personnel.</span></p>
 
-    <h2>Server logs</h2>
+    <p class="clause"><span class="num">1.2</span><span>This policy applies where we are acting as a data controller with respect to the personal data of such persons; in other words, where we determine the purposes and means of the processing of that personal data.</span></p>
 
-    <p>Like any website, this one is served by a host that keeps access logs. Netlify records requests to the site, including IP addresses, in order to serve pages, protect the service from abuse, and produce aggregate traffic counts. We do not combine those logs with anything else, and we do not use them to identify individual visitors.</p>
+    <p class="clause"><span class="num">1.3</span><span>Our website incorporates privacy controls which affect how we will process your personal data. By using the privacy controls, you can specify whether you would like to receive marketing communications and limit the collection, sharing and publication of your personal data. You can access the privacy controls via the website.</span></p>
 
-    <h2>Cookies and tracking</h2>
+    <p class="clause"><span class="num">1.4</span><span>We use cookies on our website. Insofar as those cookies are not strictly necessary for the provision of our website and services, we will ask you to consent to our use of cookies when you first visit our website.</span></p>
 
-    <p>No cookies are set by this site. The only thing stored in your browser is your light or dark theme preference, which is kept in your browser&rsquo;s local storage, never leaves your device, and can be cleared at any time by clearing site data.</p>
+    <p class="clause"><span class="num">1.5</span><span>In this policy, &ldquo;we&rdquo;, &ldquo;us&rdquo; and &ldquo;our&rdquo; refer to Tartan Web Design Ltd. For more information about us, see Section 14.</span></p>
 
-    <h2>Links to other sites</h2>
+    <h2 id="s2"><span class="num">2.</span>Credit</h2>
 
-    <p>Pages here link to GitHub, WP-CLI, Local and other external sites. Once you follow one of those links you are on someone else&rsquo;s site, under their privacy policy, not this one.</p>
+    <p class="clause"><span class="num">2.1</span><span>This document was created using a template from Docular (<a href="https://seqlegal.com/free-legal-documents/privacy-policy" rel="noopener">https://seqlegal.com/free-legal-documents/privacy-policy</a>).</span></p>
 
-    <h2>Your rights</h2>
+    <h2 id="s3"><span class="num">3.</span>The personal data that we collect</h2>
 
-    <p>We hold no personal data about visitors to this site, so there is nothing for us to show you or delete. Under UK GDPR you retain the right to complain to the <a href="https://ico.org.uk/" rel="noopener">Information Commissioner&rsquo;s Office</a> if you believe your data has been handled improperly.</p>
+    <p class="clause"><span class="num">3.1</span><span>In this Section 3 we have set out the general categories of personal data that we process and, in the case of personal data that we did not obtain directly from you, information about the source and specific categories of that data.</span></p>
 
-    <h2>Getting in touch</h2>
+    <p class="clause"><span class="num">3.2</span><span>We may process data enabling us to get in touch with you (&ldquo;<dfn>contact data</dfn>&rdquo;). The contact data may include your name, email address, telephone number, postal address and/or social media account identifiers. The source of the contact data is you. If you log into our website using a social media account, we will obtain elements of the contact data from the relevant social media account provider.</span></p>
 
-    <p>Privacy questions can be raised with <a href="https://tartanwebdesign.net" rel="noopener">Tartan Web Design</a>, who maintain this site and MigrateWP.</p>
+    <p class="clause"><span class="num">3.3</span><span>We may process your website user account data (&ldquo;<dfn>account data</dfn>&rdquo;). The account data may include your account identifier, name, email address, business name, account creation and modification dates, website settings and marketing preferences. The primary source of the account data is you, although some elements of the account data may be generated by our website. If you log into our website using a social media account, we will obtain elements of the account data from the relevant social media account provider.</span></p>
+
+    <p class="clause"><span class="num">3.4</span><span>We may process information relating to transactions, including purchases of goods and/or services, that you enter into with us and/or through our website (&ldquo;<dfn>transaction data</dfn>&rdquo;). The transaction data may include your name, your contact details, your payment card details (or other payment details) and the transaction details. The source of the transaction data is you and/or our payment services provider.</span></p>
+
+    <p class="clause"><span class="num">3.5</span><span>We may process information contained in or relating to any communication that you send to us or that we send to you (&ldquo;<dfn>communication data</dfn>&rdquo;). The communication data may include the communication content and metadata associated with the communication. Our website will generate the metadata associated with communications made using the website contact forms.</span></p>
+
+    <p class="clause"><span class="num">3.6</span><span>We may process data about your use of our website and services (&ldquo;<dfn>usage data</dfn>&rdquo;). The usage data may include your IP address, geographical location, browser type and version, operating system, referral source, length of visit, page views and website navigation paths, as well as information about the timing, frequency and pattern of your service use. The source of the usage data is our analytics tracking system.</span></p>
+
+    <h2 id="s4"><span class="num">4.</span>Purposes of processing and legal bases</h2>
+
+    <p class="clause"><span class="num">4.1</span><span>In this Section 4, we have set out the purposes for which we may process personal data and the legal bases of the processing.</span></p>
+
+    <p class="clause"><span class="num">4.2</span><span><dfn>Operations</dfn> &ndash; We may process your personal data for the purposes of operating our website, the processing and fulfilment of orders, providing our services, supplying our goods, generating invoices, bills and other payment-related documentation, and credit control. The legal basis for this processing is our legitimate interests, namely the proper administration of our website, services and business</span></p>
+
+    <p class="clause"><span class="num">4.3</span><span><dfn>Publications</dfn> &ndash; We may process data for the purposes of publishing such data on our website and elsewhere through our services. The legal basis for this processing is our legitimate interests, namely the publication of content in the ordinary course of our operations.</span></p>
+
+    <p class="clause"><span class="num">4.4</span><span><dfn>Relationships and communications</dfn> &ndash; We may process contact data, account data, transaction data and/or communication data for the purposes of managing our relationships, communicating with you (excluding communicating for the purposes of direct marketing) by email, SMS, post, fax and/or telephone, providing support services and complaint handling. The legal basis for this processing is our legitimate interests, namely communications with our website visitors, service users, individual customers and customer personnel, the maintenance of relationships, and the proper administration of our website, services and business.</span></p>
+
+    <p class="clause"><span class="num">4.5</span><span><dfn>Direct marketing</dfn> &ndash; We may process contact data, account data and/or transaction data for the purposes of creating, targeting and sending direct marketing communications by email, SMS, post and/or fax and making contact by telephone for marketing-related purposes]. The legal basis for this processing is consent.</span></p>
+
+    <p class="clause"><span class="num">4.6</span><span><dfn>Research and analysis</dfn> &ndash; We may process usage data and/or transaction data for the purposes of researching and analysing the use of our website and services, as well as researching and analysing other interactions with our business. The legal basis for this processing is our legitimate interests, namely monitoring, supporting, improving and securing our website, services and business generally.</span></p>
+
+    <p class="clause"><span class="num">4.7</span><span><dfn>Record keeping</dfn> &ndash; We may process your personal data for [the purposes of creating and maintaining our databases, back-up copies of our databases and our business records generally. The legal basis for this processing is our legitimate interests, namely ensuring that we have access to all the information we need to properly and efficiently run our business in accordance with this policy.</span></p>
+
+    <p class="clause"><span class="num">4.8</span><span><dfn>Security</dfn> &ndash; We may process your personal data for the purposes of security and the prevention of fraud and other criminal activity. The legal basis of this processing is our legitimate interests, namely the protection of our website, services and business, and the protection of others.</span></p>
+
+    <p class="clause"><span class="num">4.9</span><span><dfn>Insurance and risk management</dfn> &ndash; We may process your personal data where necessary for the purposes of obtaining or maintaining insurance coverage, managing risks and/or obtaining professional advice. The legal basis for this processing is our legitimate interests, namely the proper protection of our business against risks.</span></p>
+
+    <p class="clause"><span class="num">4.10</span><span><dfn>Legal claims</dfn> &ndash; We may process your personal data where necessary for the establishment, exercise or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure. The legal basis for this processing is our legitimate interests, namely the protection and assertion of our legal rights, your legal rights and the legal rights of others.</span></p>
+
+    <p class="clause"><span class="num">4.11</span><span><dfn>Legal compliance and vital interests</dfn> &ndash; We may also process your personal data where such processing is necessary for compliance with a legal obligation to which we are subject or in order to protect your vital interests or the vital interests of another natural person.</span></p>
+
+    <h2 id="s5"><span class="num">5.</span>Providing your personal data to others</h2>
+
+    <p class="clause"><span class="num">5.1</span><span>We may disclose your personal data to our insurers and/or professional advisers insofar as reasonably necessary for the purposes of obtaining or maintaining insurance coverage, managing risks, obtaining professional advice.</span></p>
+
+    <p class="clause"><span class="num">5.2</span><span>Your personal data held in our website database will be stored on the servers of our hosting services providers.</span></p>
+
+    <p class="clause"><span class="num">5.3</span><span>We may disclose personal data category or categories to our suppliers or subcontractors insofar as reasonably necessary for providing you services.</span></p>
+
+    <p class="clause"><span class="num">5.4</span><span>Financial transactions relating to our website and services may be handled by our payment services providers, Stripe. We will share transaction data with our payment services providers only to the extent necessary for the purposes of processing your payments, refunding such payments and dealing with complaints and queries relating to such payments and refunds. You can find information about the payment services providers&rsquo; privacy policies and practices at their website.</span></p>
+
+    <p class="clause"><span class="num">5.5</span><span>In addition to the specific disclosures of personal data set out in this Section 5, we may disclose your personal data where such disclosure is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person. We may also disclose your personal data where such disclosure is necessary for the establishment, exercise, or defence of legal claims, whether in court proceedings or in an administrative or out-of-court procedure.</span></p>
+
+    <h2 id="s6"><span class="num">6.</span>International transfers of your personal data</h2>
+
+    <p class="clause"><span class="num">6.1</span><span>In this Section 6, we provide information about the circumstances in which your personal data may be transferred to countries outside the United Kingdom and the European Economic Area (EEA).</span></p>
+
+    <p class="clause"><span class="num">6.2</span><span>The hosting facilities for our website are situated in the United Kingdom.</span></p>
+
+    <p class="clause"><span class="num">6.3</span><span>You acknowledge that personal data that you submit for publication through our website or services may be available, via the internet, around the world. We cannot prevent the use (or misuse) of such personal data by others.</span></p>
+
+    <h2 id="s7"><span class="num">7.</span>Retaining and deleting personal data</h2>
+
+    <p class="clause"><span class="num">7.1</span><span>This Section 7 sets out our data retention policies and procedures, which are designed to help ensure that we comply with our legal obligations in relation to the retention and deletion of personal data.</span></p>
+
+    <p class="clause"><span class="num">7.2</span><span>Personal data that we process for any purpose or purposes shall not be kept for longer than is necessary for that purpose or those purposes.</span></p>
+
+    <p class="clause"><span class="num">7.3</span><span>We will retain your personal data as follows:</span></p>
+
+    <p class="sub"><span class="num">(a)</span><span>contact data will be retained for a minimum period of 1 year following the date of the most recent contact between you and us, and for a maximum period of ten years following that date];</span></p>
+
+    <p class="sub"><span class="num">(b)</span><span>account data will be retained for a minimum period of 6 months following the date of closure of the relevant account, and for a maximum period of ten years following that date];</span></p>
+
+    <p class="sub"><span class="num">(c)</span><span>transaction data will be retained for a minimum period of of 1 year following the date of the transaction, and for a maximum period of ten years following that date];</span></p>
+
+    <p class="sub"><span class="num">(d)</span><span>communication data will be retained for a minimum period of of 1 year following the date of the communication in question, and for a maximum period of ten years following that date];</span></p>
+
+    <p class="sub"><span class="num">(e)</span><span>usage data will be retained for up to 10 years following the date of collection; and</span></p>
+
+    <p class="clause"><span class="num">7.4</span><span>Notwithstanding the other provisions of this Section 7, we may retain your personal data where such retention is necessary for compliance with a legal obligation to which we are subject, or in order to protect your vital interests or the vital interests of another natural person.</span></p>
+
+    <h2 id="s8"><span class="num">8.</span>Your rights</h2>
+
+    <p class="clause"><span class="num">8.1</span><span>In this Section 8, we have listed the rights that you have under data protection law.</span></p>
+
+    <p class="clause"><span class="num">8.2</span><span>Your principal rights under data protection law are:</span></p>
+
+    <p class="sub"><span class="num">(a)</span><span>the right to access &ndash; you can ask for copies of your personal data;</span></p>
+    <p class="sub"><span class="num">(b)</span><span>the right to rectification &ndash; you can ask us to rectify inaccurate personal data and to complete incomplete personal data;</span></p>
+    <p class="sub"><span class="num">(c)</span><span>the right to erasure &ndash; you can ask us to erase your personal data;</span></p>
+    <p class="sub"><span class="num">(d)</span><span>the right to restrict processing &ndash; you can ask us to restrict the processing of your personal data;</span></p>
+    <p class="sub"><span class="num">(e)</span><span>the right to object to processing &ndash; you can object to the processing of your personal data;</span></p>
+    <p class="sub"><span class="num">(f)</span><span>the right to data portability &ndash; you can ask that we transfer your personal data to another organisation or to you;</span></p>
+    <p class="sub"><span class="num">(g)</span><span>the right to complain to a supervisory authority &ndash; you can complain about our processing of your personal data; and</span></p>
+    <p class="sub"><span class="num">(h)</span><span>the right to withdraw consent &ndash; to the extent that the legal basis of our processing of your personal data is consent, you can withdraw that consent.</span></p>
+
+    <p class="clause"><span class="num">8.3</span><span>These rights are subject to certain limitations and exceptions. You can learn more about the rights of data subjects by visiting <a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/" rel="noopener">the ICO&rsquo;s guide to individual rights</a>.</span></p>
+
+    <p class="clause"><span class="num">8.4</span><span>You may exercise any of your rights in relation to your personal data by written notice to us, using the contact details set out below.</span></p>
+
+    <h2 id="s9"><span class="num">9.</span>About cookies</h2>
+
+    <p class="clause"><span class="num">9.1</span><span>A cookie is a file containing an identifier (a string of letters and numbers) that is sent by a web server to a web browser and is stored by the browser. The identifier is then sent back to the server each time the browser requests a page from the server.</span></p>
+
+    <p class="clause"><span class="num">9.2</span><span>Cookies may be either &ldquo;persistent&rdquo; cookies or &ldquo;session&rdquo; cookies: a persistent cookie will be stored by a web browser and will remain valid until its set expiry date, unless deleted by the user before the expiry date; a session cookie, on the other hand, will expire at the end of the user session, when the web browser is closed.</span></p>
+
+    <p class="clause"><span class="num">9.3</span><span>Cookies may not contain any information that personally identifies a user, but personal data that we store about you may be linked to the information stored in and obtained from cookies.</span></p>
+
+    <h2 id="s10"><span class="num">10.</span>Cookies that we use</h2>
+
+    <p class="clause"><span class="num">10.1</span><span>We use cookies for the following purposes:</span></p>
+
+    <p class="sub"><span class="num">(a)</span><span>authentication and status &ndash; we use cookies [to identify you when you visit our website and as you navigate our website, and to help us determine if you are logged into our website.</span></p>
+    <p class="sub"><span class="num">(b)</span><span>shopping cart &ndash; we use cookies to maintain the state of your shopping cart as you navigate our website</span></p>
+    <p class="sub"><span class="num">(c)</span><span>personalisation &ndash; we use cookies to store information about your preferences and to personalise our website for you</span></p>
+    <p class="sub"><span class="num">(d)</span><span>security &ndash; we use cookies as an element of the security measures used to protect user accounts, including preventing fraudulent use of login credentials, and to protect our website and services generally</span></p>
+    <p class="sub"><span class="num">(e)</span><span>advertising &ndash; we use cookies to help us to display advertisements that will be relevant to you</span></p>
+    <p class="sub"><span class="num">(f)</span><span>analysis &ndash; we use cookies to help us to analyse the use and performance of our website and services</span></p>
+    <p class="sub"><span class="num">(g)</span><span>cookie consent &ndash; we use cookies to store your preferences in relation to the use of cookies more generally</span></p>
+
+    <h2 id="s11"><span class="num">11.</span>Cookies used by our service providers</h2>
+
+    <p class="clause"><span class="num">11.1</span><span>Our service providers use cookies and those cookies may be stored on your computer when you visit our website.</span></p>
+
+    <p class="clause"><span class="num">11.2</span><span>We use Google Analytics. Google Analytics gathers information about the use of our website by means of cookies. The information gathered is used to create reports about the use of our website. You can find out more about Google&rsquo;s use of information by visiting <a href="https://www.google.com/policies/privacy/partners/" rel="noopener">https://www.google.com/policies/privacy/partners/</a> and you can review Google&rsquo;s privacy policy at <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>.</span></p>
+
+    <h2 id="s12"><span class="num">12.</span>Managing cookies</h2>
+
+    <p class="clause"><span class="num">12.1</span><span>Most browsers allow you to refuse to accept cookies and to delete cookies. The methods for doing so vary from browser to browser, and from version to version. You can however obtain up-to-date information about blocking and deleting cookies via these links:</span></p>
+
+    <p class="sub"><span class="num">(a)</span><span><a href="https://support.google.com/chrome/answer/95647" rel="noopener">https://support.google.com/chrome/answer/95647</a> (Chrome);</span></p>
+    <p class="sub"><span class="num">(b)</span><span><a href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences" rel="noopener">https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences</a> (Firefox);</span></p>
+    <p class="sub"><span class="num">(c)</span><span><a href="https://help.opera.com/en/latest/security-and-privacy/" rel="noopener">https://help.opera.com/en/latest/security-and-privacy/</a> (Opera);</span></p>
+    <p class="sub"><span class="num">(d)</span><span><a href="https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies" rel="noopener">https://support.microsoft.com/en-gb/help/17442/windows-internet-explorer-delete-manage-cookies</a> (Internet Explorer);</span></p>
+    <p class="sub"><span class="num">(e)</span><span><a href="https://support.apple.com/en-gb/guide/safari/manage-cookies-and-website-data-sfri11471/mac" rel="noopener">https://support.apple.com/en-gb/guide/safari/manage-cookies-and-website-data-sfri11471/mac</a> (Safari); and</span></p>
+    <p class="sub"><span class="num">(f)</span><span><a href="https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy" rel="noopener">https://privacy.microsoft.com/en-us/windows-10-microsoft-edge-and-privacy</a> (Edge).</span></p>
+
+    <p class="clause"><span class="num">12.2</span><span>Blocking all cookies will have a negative impact upon the usability of many websites.</span></p>
+
+    <p class="clause"><span class="num">12.3</span><span>If you block cookies, you will not be able to use all the features on our website.</span></p>
+
+    <h2 id="s13"><span class="num">13.</span>Amendments</h2>
+
+    <p class="clause"><span class="num">13.1</span><span>We may update this policy from time to time by publishing a new version on our website.</span></p>
+
+    <p class="clause"><span class="num">13.2</span><span>You should check this page occasionally to ensure you are happy with any changes to this policy.</span></p>
+
+    <p class="clause"><span class="num">13.3</span><span>We may notify you significant changes to this policy by email.</span></p>
+
+    <h2 id="s14"><span class="num">14.</span>Our details</h2>
+
+    <p class="clause"><span class="num">14.1</span><span>This website is owned and operated by Tartan Web Design Ltd.</span></p>
+
+    <p class="clause"><span class="num">14.2</span><span>We are registered in Scotland under registration number sc661135, and our registered office is at 4-5 Mitchell Street, Edinburgh.</span></p>
+
+    <p class="clause"><span class="num">14.4</span><span>You can contact us:</span></p>
+
+    <p class="sub"><span class="num">(b)</span><span>using our website contact form;</span></p>
+    <p class="sub"><span class="num">(c)</span><span>by telephone, on the contact number published on our website; or</span></p>
+    <p class="sub"><span class="num">(d)</span><span>by email, using the email address published on our website.</span></p>
+
+    <h2 id="s15"><span class="num">15.</span>Data protection officer</h2>
+
+    <p class="clause"><span class="num">15.1</span><span>Our data protection officer&rsquo;s contact details are as above.</span></p>
 
   </article>
 </div>

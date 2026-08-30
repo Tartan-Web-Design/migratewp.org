@@ -798,3 +798,89 @@ a.card h3 { color: var(--accent-deep); }
 .steps > div { display: flex; flex-direction: column; }
 .steps .code { margin-top: auto; margin-bottom: 0; }
 .steps h3 { font-size: 1.05rem; }
+
+/* 15. Legal documents ---------------------------------------------- */
+
+.legal { max-width: 74ch; }
+
+.legal .toc {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  background: var(--panel);
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 2.75rem;
+}
+.legal .toc h2 {
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-faint);
+  margin: 0 0 .8rem;
+  border: 0;
+  padding: 0;
+}
+.legal .toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 2;
+  column-gap: 2rem;
+  font-size: .93rem;
+}
+@media (max-width: 620px) { .legal .toc ol { columns: 1; } }
+.legal .toc li {
+  margin: 0 0 .3rem;
+  break-inside: avoid;
+  display: grid;
+  grid-template-columns: 1.6rem 1fr;
+}
+.legal .toc span { color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.legal .toc a { color: var(--ink-soft); text-decoration: none; }
+.legal .toc a:hover { color: var(--accent-deep); text-decoration: underline; }
+
+.legal h2 {
+  display: grid;
+  grid-template-columns: 3.1rem 1fr;
+  font-size: 1.18rem;
+  margin-top: 2.6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule-soft);
+  scroll-margin-top: 5rem;
+}
+.legal h2:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+.legal h2 .num {
+  color: var(--accent-deep);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.legal .clause {
+  display: grid;
+  grid-template-columns: 3.1rem 1fr;
+  margin-bottom: .9rem;
+}
+.legal .clause > .num {
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  font-size: .93em;
+  padding-top: .1em;
+}
+
+.legal .sub {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr;
+  margin: 0 0 .7rem 3.1rem;
+}
+.legal .sub > .num {
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+  font-size: .93em;
+  padding-top: .1em;
+}
+
+@media (max-width: 560px) {
+  .legal h2, .legal .clause { grid-template-columns: 2.5rem 1fr; }
+  .legal .sub { grid-template-columns: 2.1rem 1fr; margin-left: 1.4rem; }
+}
+
+.legal dfn { font-style: normal; font-weight: 620; }
