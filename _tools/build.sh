@@ -69,7 +69,6 @@ page() {
       <a href="/docs/"$(aria docs)>Docs</a>
       <a href="/releases/"$(aria releases)>Releases</a>
       <a href="/roadmap/"$(aria roadmap)>Roadmap</a>
-      <a href="/contact/"$(aria contact)>Contact</a>
       <a class="nav-cta" href="https://github.com/Tartan-Web-Design/migrateWP/releases" rel="noopener">Download</a>
     </nav>
 
@@ -120,7 +119,6 @@ ${body}
       <div>
         <h2>More</h2>
         <ul>
-          <li><a href="/contact/">Contact</a></li>
           <li><a href="/privacy-policy/">Privacy policy</a></li>
           <li><a href="https://tartanwebdesign.net" rel="noopener">Tartan Web Design</a></li>
         </ul>
@@ -893,101 +891,14 @@ page "roadmap/index.html" \
     </div>
 
     <div class="note">
-      <p><strong>Want something on this list?</strong> <a href="https://github.com/Tartan-Web-Design/migrateWP/issues" rel="noopener">Open an issue</a> or <a href="/contact/">get in touch</a>.</p>
+      <p><strong>Want something on this list?</strong> <a href="https://github.com/Tartan-Web-Design/migrateWP/issues" rel="noopener">Open an issue on GitHub</a> and say so.</p>
     </div>
 
   </div>
 </div>
 BODY
 
-# ---------------------------------------------------------------- contact
-page "contact/index.html" \
-  "Contact — MigrateWP" \
-  "Get in touch about MigrateWP: report a bug, suggest a feature, or ask a question." \
-  "/contact/" "contact" <<'BODY'
-<div class="page-head">
-  <div class="wrap">
-    <p class="breadcrumb"><a href="/">Home</a><span>/</span>Contact</p>
-    <h1>Contact</h1>
-    <p>Questions, bug reports and feature ideas are all welcome.</p>
-  </div>
-</div>
 
-<div class="wrap" style="padding:clamp(2rem,4vw,3rem) 0 4.5rem">
-  <div class="grid grid-2" style="align-items:start;max-width:60rem">
-
-    <div>
-      <h2>Send a message</h2>
-      <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/thanks/">
-        <input type="hidden" name="form-name" value="contact">
-        <p class="visually-hidden">
-          <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
-        </p>
-
-        <div class="field">
-          <label for="name">Your name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required>
-        </div>
-
-        <div class="field">
-          <label for="email">Email address</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-          <p class="field-hint">Only used to reply to you.</p>
-        </div>
-
-        <div class="field">
-          <label for="subject">Subject</label>
-          <select id="subject" name="subject">
-            <option>General question</option>
-            <option>Bug report</option>
-            <option>Feature request</option>
-            <option>Something else</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Send message</button>
-      </form>
-    </div>
-
-    <div>
-      <h2>Other ways to reach us</h2>
-      <div class="card" style="margin-bottom:1.15rem">
-        <h3>Found a bug?</h3>
-        <p>GitHub issues are the fastest route &mdash; they keep the discussion next to the code.</p>
-        <p><a href="https://github.com/Tartan-Web-Design/migrateWP/issues" rel="noopener">Open an issue &rarr;</a></p>
-      </div>
-      <div class="card" style="margin-bottom:1.15rem">
-        <h3>Reading the source</h3>
-        <p>MigrateWP is a single Bash script, released under the GPLv2.</p>
-        <p><a href="https://github.com/Tartan-Web-Design/migrateWP" rel="noopener">View on GitHub &rarr;</a></p>
-      </div>
-      <div class="card">
-        <h3>About the maintainers</h3>
-        <p>MigrateWP is built and maintained by Tartan Web Design.</p>
-        <p><a href="https://tartanwebdesign.net" rel="noopener">tartanwebdesign.net &rarr;</a></p>
-      </div>
-    </div>
-
-  </div>
-</div>
-BODY
-
-# --------------------------------------------------------- contact thanks
-page "contact/thanks/index.html" \
-  "Message sent — MigrateWP" \
-  "Thanks for getting in touch with MigrateWP." \
-  "/contact/thanks/" "contact" <<'BODY'
-<div class="wrap error-page">
-  <h1>Thanks &mdash; message sent</h1>
-  <p class="measure" style="margin-inline:auto;color:var(--ink-soft)">Your message is on its way. We will reply to the email address you gave us as soon as we can.</p>
-  <p style="margin-top:1.6rem"><a class="btn btn-ghost" href="/">Back to the home page</a></p>
-</div>
-BODY
 
 # --------------------------------------------------------- privacy policy
 page "privacy-policy/index.html" \
@@ -1011,13 +922,7 @@ page "privacy-policy/index.html" \
 
     <h2>The short version</h2>
 
-    <p>This website is a set of static files. It sets no cookies, runs no analytics, and loads nothing from third party servers. The only personal data it handles is what you type into the contact form, and only if you choose to send it.</p>
-
-    <h2>The contact form</h2>
-
-    <p>If you submit the contact form we receive the name, email address, subject and message you entered. We use them to reply to you and for no other purpose. We do not add you to a mailing list and we do not pass your details to anyone else.</p>
-
-    <p>Form submissions are handled by Netlify, which hosts this site, and are stored in our Netlify account. Netlify records the submission along with technical information such as the IP address it came from, as part of its spam filtering. Netlify&rsquo;s own <a href="https://www.netlify.com/privacy/" rel="noopener">privacy policy</a> covers that processing.</p>
+    <p>This website is a set of static files. It sets no cookies, runs no analytics, loads nothing from third party servers, and has no forms. It does not ask you for any personal data and has no way to collect it.</p>
 
     <h2>Server logs</h2>
 
@@ -1033,11 +938,11 @@ page "privacy-policy/index.html" \
 
     <h2>Your rights</h2>
 
-    <p>If you have sent us a message and want a copy of it, or want it deleted, ask and we will do it. Under UK GDPR you also have the right to complain to the <a href="https://ico.org.uk/" rel="noopener">Information Commissioner&rsquo;s Office</a> if you think your data has been handled improperly.</p>
+    <p>We hold no personal data about visitors to this site, so there is nothing for us to show you or delete. Under UK GDPR you retain the right to complain to the <a href="https://ico.org.uk/" rel="noopener">Information Commissioner&rsquo;s Office</a> if you believe your data has been handled improperly.</p>
 
     <h2>Getting in touch</h2>
 
-    <p>Privacy questions go to the same place as everything else &mdash; the <a href="/contact/">contact page</a>.</p>
+    <p>Privacy questions can be raised with <a href="https://tartanwebdesign.net" rel="noopener">Tartan Web Design</a>, who maintain this site and MigrateWP.</p>
 
   </article>
 </div>

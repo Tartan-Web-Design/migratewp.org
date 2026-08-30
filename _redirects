@@ -2,8 +2,10 @@
 # Netlify serves /docs/ from /docs/index.html automatically, so only
 # genuinely changed or retired paths need a rule here.
 
-/contact-migratewp/        /contact/          301!
-/contact-migratewp         /contact/          301!
+# The contact page was retired in the static rebuild; enquiries go to the
+# GitHub issue tracker, so the old WordPress contact URL lands on the home page.
+/contact-migratewp/        /                  301!
+/contact-migratewp         /                  301!
 
 # WordPress plumbing that no longer exists.
 /wp-admin                  /                  301

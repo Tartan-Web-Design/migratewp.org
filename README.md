@@ -13,7 +13,6 @@ The MigrateWP tool itself lives in
 ├── index.html                     home
 ├── docs/                          overview + 4 documentation pages
 ├── releases/  roadmap/            project pages
-├── contact/                       Netlify Forms contact page + thank-you page
 ├── privacy-policy/
 ├── 404.html
 ├── assets/{css,js,img}
@@ -41,14 +40,6 @@ Every push to `main` redeploys. Pull requests get their own deploy preview.
 Point `migratewp.org` at Netlify once the deploy preview looks right. Netlify
 issues the Let's Encrypt certificate automatically. Keep the WordPress host
 running until DNS has propagated, then cancel it.
-
-### The contact form
-
-The form uses [Netlify Forms](https://docs.netlify.com/forms/setup/): the
-`data-netlify="true"` attribute and the hidden `form-name` field are all that
-is required. Submissions appear under **Forms** in the Netlify dashboard.
-Add a notification email there so messages reach an inbox rather than sitting
-in the dashboard. A honeypot field (`bot-field`) is already wired up.
 
 ## Editing the site
 
@@ -95,6 +86,6 @@ the live site's URL structure. A few things need your eyes before launch:
 - **Privacy policy** — rewritten to describe this static site accurately
   (no cookies, no analytics, Netlify Forms). Check it against your own
   obligations before publishing.
-- **Old URLs** — `_redirects` covers `/contact-migratewp/` and the usual
-  WordPress plumbing. Pull the top pages out of Search Console or the old
+- **Old URLs** — `_redirects` sends `/contact-migratewp/` to the home page
+  and covers the usual WordPress plumbing. Pull the top pages out of Search Console or the old
   server's access logs and add anything else that still gets traffic.

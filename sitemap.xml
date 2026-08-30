@@ -8,6 +8,5 @@
   <url><loc>https://migratewp.org/docs/requirements/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://migratewp.org/releases/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://migratewp.org/roadmap/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://migratewp.org/contact/</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://migratewp.org/privacy-policy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
