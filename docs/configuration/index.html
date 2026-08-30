@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuration — MigrateWP</title>
+<meta name="description" content="A reference for every setting in migratewp.conf: logUserName, sshUser, remoteURL, remotePath, localURL and localPath.">
+<link rel="canonical" href="https://migratewp.org/docs/configuration/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MigrateWP">
+<meta property="og:title" content="Configuration — MigrateWP">
+<meta property="og:description" content="A reference for every setting in migratewp.conf: logUserName, sshUser, remoteURL, remotePath, localURL and localPath.">
+<meta property="og:url" content="https://migratewp.org/docs/configuration/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script>
+/* Apply the saved theme before first paint to avoid a flash. */
+(function(){try{var t=localStorage.getItem('mwp-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/>
+        <path d="M8 12h6l2.5 8L19 12h5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M23 19.5l2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M25 22H9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+      </svg>
+      <span>Migrate<span class="brand-mwp">WP</span></span>
+    </a>
+
+    <button id="nav-toggle" class="icon-btn" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+
+    <nav id="primary-nav" class="nav" aria-label="Primary">
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/releases/">Releases</a>
+      <a href="/roadmap/">Roadmap</a>
+      <a href="/contact/">Contact</a>
+      <a class="nav-cta" href="https://github.com/Tartan-Web-Design/migrateWP/releases" rel="noopener">Download</a>
+    </nav>
+
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to dark theme">
+      <svg class="icon-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.7"/><path d="M10 1.6v2M10 16.4v2M18.4 10h-2M3.6 10h-2M15.9 4.1l-1.4 1.4M5.5 14.5l-1.4 1.4M15.9 15.9l-1.4-1.4M5.5 5.5L4.1 4.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <svg class="icon-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.5 12.4A7 7 0 017.6 3.5a7 7 0 108.9 8.9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<div class="page-head">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/docs/">Docs</a><span>/</span>Configuration</p>
+    <h1>Configuration</h1>
+    <p>MigrateWP has one config file. Describe each site once, and you never type a path again.</p>
+  </div>
+</div>
+
+<div class="wrap docs-layout">
+  <nav class="docs-nav" aria-label="Documentation">
+    <h2>Documentation</h2>
+    <ul>
+      <li><a href="/docs/">Overview</a></li>
+      <li><a href="/docs/getting-started/">Getting started</a></li>
+      <li><a href="/docs/configuration/" aria-current="page">Configuration</a></li>
+      <li><a href="/docs/commands/">Command reference</a></li>
+      <li><a href="/docs/requirements/">Requirements</a></li>
+    </ul>
+    <h2>Project</h2>
+    <ul>
+      <li><a href="/releases/">Releases</a></li>
+      <li><a href="/roadmap/">Roadmap</a></li>
+      <li><a href="https://github.com/Tartan-Web-Design/migrateWP" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
+
+  <article class="prose">
+<h2>Where the config lives</h2>
+
+<p><code>migratewp.conf</code> sits in the same folder as <code>migratewp.sh</code>, and the script sources it at the start of a run. It is a Bash file containing a single <code>case</code> statement keyed on the site name you type on the command line.</p>
+
+<h2>Settings</h2>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>Setting</th><th>Scope</th><th>What it is</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>logUserName</code></td>
+      <td>Global</td>
+      <td>Your name, used to label entries in the migration changelog so a team can see who moved what.</td>
+    </tr>
+    <tr>
+      <td><code>sshUser</code></td>
+      <td>Per site</td>
+      <td>The SSH user and host for the remote server, in <code>user@host</code> form, e.g. <code>username@8.8.8.8</code>. The user needs permissions over the folder holding the WordPress installation. On Plesk this is the system user for the webspace.</td>
+    </tr>
+    <tr>
+      <td><code>remoteURL</code></td>
+      <td>Per site</td>
+      <td>The live site's domain, e.g. <code>example.com</code>. Used as one half of the WP-CLI search and replace.</td>
+    </tr>
+    <tr>
+      <td><code>remotePath</code></td>
+      <td>Per site</td>
+      <td>Absolute path to <code>wp-content</code> on the server, e.g. <code>/var/www/vhosts/example.com/httpdocs/wp-content/</code>.</td>
+    </tr>
+    <tr>
+      <td><code>localURL</code></td>
+      <td>Per site</td>
+      <td>The domain your Local site answers on, e.g. <code>example.local</code>.</td>
+    </tr>
+    <tr>
+      <td><code>localPath</code></td>
+      <td>Per site</td>
+      <td>Absolute path to <code>wp-content</code> on your Mac, e.g. <code>/Users/Scott/Local Sites/example/app/public/wp-content/</code>.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="note">
+  <p><strong>Trailing slashes are handled for you.</strong> If <code>remotePath</code> or <code>localPath</code> is missing its trailing slash, MigrateWP adds one before running rsync.</p>
+</div>
+
+<h2>Adding a site</h2>
+
+<p>Copy an existing block, change the name and the six values, and keep it above the <code>*)</code> fallback:</p>
+
+<div class="code"><pre><code>    clientsite)
+        sshUser="clientsite@203.0.113.10"
+
+        remoteURL="clientsite.co.uk"
+        remotePath="/var/www/vhosts/clientsite.co.uk/httpdocs/wp-content/"
+        localURL="clientsite.local"
+        localPath="/Users/Scott/Local Sites/clientsite/app/public/wp-content/"
+
+    ;;</code></pre></div>
+
+<p>From then on the site is addressed by that name:</p>
+
+<div class="code"><pre><code><span class="p">$ </span>mwp push clientsite
+<span class="p">$ </span>mwp pull clientsite
+<span class="p">$ </span>mwp report clientsite</code></pre></div>
+
+<h2>Paths with spaces</h2>
+
+<p>Local's default site folder lives under <code>~/Local Sites/</code>, which contains a space. Keep the value in double quotes exactly as the sample config does and MigrateWP handles it correctly.</p>
+
+<h2>Keeping the config out of version control</h2>
+
+<p><code>migratewp.conf</code> holds server addresses and usernames for every site you manage. If you keep your copy of MigrateWP in a repository, add the config to <code>.gitignore</code> and keep the sample file as the thing that gets committed.</p>
+
+<div class="code"><pre><code><span class="c"># .gitignore</span>
+migratewp.conf
+mwp.log</code></pre></div>
+
+<div class="next-prev">
+  <span><a href="/docs/getting-started/">&larr; Getting started</a></span>
+  <span><a href="/docs/commands/">Command reference &rarr;</a></span>
+</div>
+  </article>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/>
+            <path d="M8 12h6l2.5 8L19 12h5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23 19.5l2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25 22H9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          </svg>
+          <span>Migrate<span class="brand-mwp">WP</span></span>
+        </a>
+        <p class="footer-blurb">Command line WordPress migration for developers. Free and open source under the GPLv2.</p>
+      </div>
+      <div>
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="/docs/getting-started/">Getting started</a></li>
+          <li><a href="/docs/configuration/">Configuration</a></li>
+          <li><a href="/docs/commands/">Command reference</a></li>
+          <li><a href="/docs/requirements/">Requirements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/releases/">Releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="https://github.com/Tartan-Web-Design/migrateWP" rel="noopener">Source on GitHub</a></li>
+          <li><a href="https://github.com/Tartan-Web-Design/migrateWP/issues" rel="noopener">Report an issue</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More</h2>
+        <ul>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+          <li><a href="https://tartanwebdesign.net" rel="noopener">Tartan Web Design</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p style="margin:0">&copy; 2021&ndash;2026 Tartan Web Design. MigrateWP is released under the <a href="https://github.com/Tartan-Web-Design/migrateWP/blob/master/LICENSE" rel="noopener">GPLv2</a>.</p>
+      <p style="margin:0">Built as static HTML. No cookies, no trackers.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Legacy WordPress URLs -> static equivalents.
+# Netlify serves /docs/ from /docs/index.html automatically, so only
+# genuinely changed or retired paths need a rule here.
+
+/contact-migratewp/        /contact/          301!
+/contact-migratewp         /contact/          301!
+
+# WordPress plumbing that no longer exists.
+/wp-admin                  /                  301
+/wp-admin/*                /                  301
+/wp-login.php              /                  301
+/xmlrpc.php                /                  410
+/feed                      /                  301
+/feed/*                    /                  301
+/comments/feed/*           /                  301
+/wp-json/*                 /                  410
+
+# Old uploads. Point these at real files under /assets/ as you port
+# the images across; until then they fall through to the 404 page.

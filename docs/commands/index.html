@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Command reference — MigrateWP</title>
+<meta name="description" content="Reference for the MigrateWP commands push, pull, rollback and report, and the -f, -d and -h flags.">
+<link rel="canonical" href="https://migratewp.org/docs/commands/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MigrateWP">
+<meta property="og:title" content="Command reference — MigrateWP">
+<meta property="og:description" content="Reference for the MigrateWP commands push, pull, rollback and report, and the -f, -d and -h flags.">
+<meta property="og:url" content="https://migratewp.org/docs/commands/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script>
+/* Apply the saved theme before first paint to avoid a flash. */
+(function(){try{var t=localStorage.getItem('mwp-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/>
+        <path d="M8 12h6l2.5 8L19 12h5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M23 19.5l2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M25 22H9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+      </svg>
+      <span>Migrate<span class="brand-mwp">WP</span></span>
+    </a>
+
+    <button id="nav-toggle" class="icon-btn" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+      <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+
+    <nav id="primary-nav" class="nav" aria-label="Primary">
+      <a href="/docs/" aria-current="page">Docs</a>
+      <a href="/releases/">Releases</a>
+      <a href="/roadmap/">Roadmap</a>
+      <a href="/contact/">Contact</a>
+      <a class="nav-cta" href="https://github.com/Tartan-Web-Design/migrateWP/releases" rel="noopener">Download</a>
+    </nav>
+
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch to dark theme">
+      <svg class="icon-sun" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3.6" stroke="currentColor" stroke-width="1.7"/><path d="M10 1.6v2M10 16.4v2M18.4 10h-2M3.6 10h-2M15.9 4.1l-1.4 1.4M5.5 14.5l-1.4 1.4M15.9 15.9l-1.4-1.4M5.5 5.5L4.1 4.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      <svg class="icon-moon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.5 12.4A7 7 0 017.6 3.5a7 7 0 108.9 8.9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<div class="page-head">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/docs/">Docs</a><span>/</span>Command reference</p>
+    <h1>Command reference</h1>
+    <p>Four commands and three flags. Each command takes the site name you set in migratewp.conf.</p>
+  </div>
+</div>
+
+<div class="wrap docs-layout">
+  <nav class="docs-nav" aria-label="Documentation">
+    <h2>Documentation</h2>
+    <ul>
+      <li><a href="/docs/">Overview</a></li>
+      <li><a href="/docs/getting-started/">Getting started</a></li>
+      <li><a href="/docs/configuration/">Configuration</a></li>
+      <li><a href="/docs/commands/" aria-current="page">Command reference</a></li>
+      <li><a href="/docs/requirements/">Requirements</a></li>
+    </ul>
+    <h2>Project</h2>
+    <ul>
+      <li><a href="/releases/">Releases</a></li>
+      <li><a href="/roadmap/">Roadmap</a></li>
+      <li><a href="https://github.com/Tartan-Web-Design/migrateWP" rel="noopener">GitHub</a></li>
+    </ul>
+  </nav>
+
+  <article class="prose">
+<h2>Syntax</h2>
+
+<div class="code"><pre><code>mwp [flag] &lt;push|pull|rollback|report&gt; &lt;sitename&gt;</code></pre></div>
+
+<p>Without the alias, that is <code>bash migratewp.sh [flag] &lt;action&gt; &lt;sitename&gt;</code>. Run <code>mwp</code> with no arguments, or with an action it does not recognise, and it prints the usage message.</p>
+
+<h2 id="push">Push</h2>
+
+<p>Migrates a site from your local machine to the remote server.</p>
+
+<div class="code"><pre><code><span class="p">$ </span>mwp push mysite</code></pre></div>
+
+<p>What happens, in order:</p>
+
+<ol>
+  <li><strong>Pre-flight checks.</strong> Local site running, local directory present, WP-CLI available, SSH login working, remote directory present.</li>
+  <li><strong>Backup.</strong> The remote <code>wp-content</code> is copied to <code>wp-content_bak</code> on the server, and the remote database is dumped.</li>
+  <li><strong>Sync.</strong> rsync copies the changed files from your Mac to the server.</li>
+  <li><strong>Database.</strong> The local database is exported, moved across, imported, and WP-CLI runs a search and replace from <code>localURL</code> to <code>remoteURL</code>.</li>
+  <li><strong>Log.</strong> The migration is written to the site's changelog against your <code>logUserName</code>.</li>
+</ol>
+
+<h2 id="pull">Pull</h2>
+
+<p>Migrates a site from the remote server to your local machine.</p>
+
+<div class="code"><pre><code><span class="p">$ </span>mwp pull mysite</code></pre></div>
+
+<p>The same sequence in reverse: your <em>local</em> <code>wp-content</code> is backed up to <code>wp-content_bak</code> and your local database is exported to <code>db_bak.sql</code> before anything is overwritten, then the remote files and database come down and the URL is replaced with <code>localURL</code>.</p>
+
+<div class="note warn">
+  <p><strong>Pull overwrites your local site.</strong> That is the point of it &mdash; but if you have local work in <code>wp-content</code> that is not committed anywhere, it lives only in <code>wp-content_bak</code> after a pull.</p>
+</div>
+
+<h2 id="rollback">Rollback</h2>
+
+<p>Undoes a migration, restoring from the backup taken when it ran.</p>
+
+<div class="code"><pre><code><span class="p">$ </span>mwp rollback mysite</code></pre></div>
+
+<p>MigrateWP asks which migration you want to roll back to before it does anything, then restores the files from <code>wp-content_bak</code> and reimports the database dump. The rollback is itself recorded in the changelog, so the history stays honest.</p>
+
+<h2 id="report">Report</h2>
+
+<p>Prints the migration history for a site.</p>
+
+<div class="code"><pre><code><span class="p">$ </span>mwp report mysite</code></pre></div>
+
+<p>The changelog (<code>mwp.log</code>) is kept alongside <code>wp-content</code> on the remote server, so every developer's pushes and pulls land in the same file. <code>report</code> fetches it over SSH and prints it. If a site has never been migrated, it reports that no report is available.</p>
+
+<h2>Flags</h2>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>Flag</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>-f</code></td>
+      <td>Full run &mdash; take backups, then migrate. This is also what happens when you pass no flag at all, so <code>mwp push mysite</code> and <code>mwp -f push mysite</code> do the same thing.</td>
+    </tr>
+    <tr>
+      <td><code>-d</code></td>
+      <td>Dry run. Reserved for the rsync dry run that reports what a migration <em>would</em> change. Not yet enabled &mdash; see the <a href="/roadmap/">roadmap</a>.</td>
+    </tr>
+    <tr>
+      <td><code>-h</code>, <code>-?</code></td>
+      <td>Print the usage message and exit.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="code"><pre><code><span class="p">$ </span>mwp -h
+Usage: bash migratewp.sh -d [&lt;pull|push|rollback|report&gt;] [Sitename]</code></pre></div>
+
+<h2>What gets left behind</h2>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th>File</th><th>Where</th><th>What it is</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>wp-content_bak</code></td><td>Beside <code>wp-content</code>, on whichever side was overwritten</td><td>The file backup rollback restores from.</td></tr>
+    <tr><td><code>db_bak.sql</code></td><td>Local WordPress root, after a pull</td><td>The database backup rollback restores from.</td></tr>
+    <tr><td><code>mwp.log</code></td><td>Beside <code>wp-content</code> on the remote server</td><td>The shared changelog <code>report</code> reads.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="next-prev">
+  <span><a href="/docs/configuration/">&larr; Configuration</a></span>
+  <span><a href="/docs/requirements/">Requirements &rarr;</a></span>
+</div>
+  </article>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="currentColor" opacity=".08"/>
+            <path d="M8 12h6l2.5 8L19 12h5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23 19.5l2.5 2.5-2.5 2.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25 22H9" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          </svg>
+          <span>Migrate<span class="brand-mwp">WP</span></span>
+        </a>
+        <p class="footer-blurb">Command line WordPress migration for developers. Free and open source under the GPLv2.</p>
+      </div>
+      <div>
+        <h2>Documentation</h2>
+        <ul>
+          <li><a href="/docs/getting-started/">Getting started</a></li>
+          <li><a href="/docs/configuration/">Configuration</a></li>
+          <li><a href="/docs/commands/">Command reference</a></li>
+          <li><a href="/docs/requirements/">Requirements</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="/releases/">Releases</a></li>
+          <li><a href="/roadmap/">Roadmap</a></li>
+          <li><a href="https://github.com/Tartan-Web-Design/migrateWP" rel="noopener">Source on GitHub</a></li>
+          <li><a href="https://github.com/Tartan-Web-Design/migrateWP/issues" rel="noopener">Report an issue</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>More</h2>
+        <ul>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+          <li><a href="https://tartanwebdesign.net" rel="noopener">Tartan Web Design</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p style="margin:0">&copy; 2021&ndash;2026 Tartan Web Design. MigrateWP is released under the <a href="https://github.com/Tartan-Web-Design/migrateWP/blob/master/LICENSE" rel="noopener">GPLv2</a>.</p>
+      <p style="margin:0">Built as static HTML. No cookies, no trackers.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
